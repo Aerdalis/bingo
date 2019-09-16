@@ -24,4 +24,4 @@ Ou
 	//<![CDATA[
 ```
 # License
-Copyleft (ↄ) 2017
+Copyleft (ↄ) 2019
