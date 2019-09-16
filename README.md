@@ -1,6 +1,7 @@
 # Bingo
 Générateur de grille de bingo, lancé suite aux twitchs dessins de Boulet.
 - [Grille de Boulet](http://htmlpreview.github.io/?https://raw.githubusercontent.com/Aerdalis/bingo/master/bingos/bingo_boulet_dessin.html)
+
 Pour les utilisateurs de Edge :
 - [Grille de Boulet (hors ligne)](https://raw.githubusercontent.com/Aerdalis/bingo/master/bingos/bingo_boulet_dessin.html) (clic droit, enregistrer sous...)
 
