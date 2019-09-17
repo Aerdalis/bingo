@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!-- Inspiré de la grille créée par @kholo et @thenolette disponible sur le site https://kholo.bit-ronin.net/twitch/bingo_camily.html 
+Copyleft (ↄ) 2019 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+<head>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+	<script type="application/javascript">
+	var row = 7;	// nombre de lignes
+	var col = 7;	// nombre de colones
+	var title = "Bingo Stream CPC";	//titre du bingo
+	var bingo = [
+	"Annecdote de N. Malware",
+	"Imprévu technique/couac régie",
+	"L-F. Sébum discute Littérature",
+	"Gros teasing",
+	"Long oubli de sauvegarde",
+	"Quelqu'un demande si un test du jeu X est prévu",
+	"Ô rage : un fion vole bas",
+	"Problème de volume",
+	"Point Bon Vieux Temps",
+	"Point ASMR",
+	"Izual et Fallout : l'amour est dans le rpg",
+	"Sondage",
+	"Intervention exterieure : aggression, jets divers, punchline...",
+	"Révélation de N. Malware sur un rédacteur",
+	"Évocation du Renard argenté",
+	"Crash du jeu",
+	"Apparition d'un membre de la rédac dans le chat",
+	"Annecdote sur le jeu",
+	"PEGI 18 : allusion salace",
+	"Compliment passif agressif",
+	"Chat totalement ignoré",
+	"Entropie : un rédacteur met le chaos",
+	"Journée APD : double sens imprévu",
+	"Denis de grosse tasse : point café",
+	"Accessoire pittoresque",
+	"Grâce divine : présence d'Ackboo",
+	"Évidence : le rédacteur passe à côté, le chat panique",
+	"Jeu de mot CPC©",
+	"Point tronçonneuse : tacle du jeu",
+	"Le + CPC : point culture sur le jeu",
+	"\"Cœur, cœur, cœur\"",
+	"EllenReplay saves the day",
+	"MonsieurChat fidèle à son animal totem",
+	"Déménageurs breton : meublage à la rame",
+	"Balance ton port : micro malmené",
+	"Les belles histoires de l'Oncle Denis : annecdote historique",
+	"Star Citizen Kane, colosse controversé",
+	"Nihilisme Ackbooesque",
+	"Kahn_lusth en mode nounours",
+	"CanardPC : méthode de la Rache",
+	"Le + CPC : analyse du jeu",
+	"Stream de survie : le rédacteur meurt de faim",
+	"Jeu atroce, stream glorieux",
+	"Rédacteur blasé",
+	"Point CPCHardware : \"c'est la faute du matos\"",
+	"Mention d'un rédacteur parti trop tôt",
+	"Star Citadine : Polynette",
+	"Le train ?",
+	"Subtilité, finesse et poésie"
+	];
+	//<![CDATA[
+	function generate(){
+		// vars
+		var tr, td, i, j;
+		var id_content=0;
+		// add title of the bingo
+		document.getElementById('title').textContent = title;
+		document.getElementsByTagName('title')[0].textContent = title;
+		// generate bingo table
+		var table = document.getElementById('grid');
+		table.removeChild(table.firstChild)
+		for (i = 0; i < row; i++) {
+			tr = document.createElement('tr');
+			for (j = 0; j < col; j++) {
+				td = document.createElement('td');
+				td.textContent = bingo[id_content];	// add content
+				td.addEventListener('click', sw_bingo);
+				tr.appendChild(td)
+				id_content=id_content+1;
+			}
+			table.appendChild(tr);
+		}
+		// reset button
+		document.getElementById('reset').addEventListener('click', reset_b);
+	}
+	
+	//functions
+	function sw_bingo(evt) {
+		classList = evt.target.classList;
+		if (classList.contains('selected')) {
+			classList.remove('selected'); 
+		} else {
+			classList.add('selected');
+		}
+	}
+	function reset_b() {
+		for (let td of document.getElementsByTagName('td')) {
+			td.classList.remove('selected');
+		}
+	}
+	
+
+	window.addEventListener ? 
+window.addEventListener("load",generate,false) : 
+window.attachEvent && window.attachEvent("onload",generate);
+	//]]>
+	</script>
+	<title></title>
+	<style type="text/css">
+		/* vars */
+		:root {
+			--main_color: #FF007F;
+			--main_bg_color: #222222;
+			--sel_color: #FFFFFF;
+			--sel_bg_color: #DF005F;
+			--hover_bg_color: #FF0090;
+		}
+		/* main */
+		body {
+			color: var(--main_color);
+			background-color: var(--main_bg_color);
+			font-family: "Fira Sans", sans-serif;
+			font-size: 1em;
+		}
+		h1 {
+			text-align: center;
+			color: var(--main_color);
+			font-size: 3vh;
+		}
+		/* table */
+		table {
+			margin: auto auto;
+			height: 80vh;
+			width: 80vh;
+		}
+		table, tr, td {
+			border: 2px solid var(--sel_bg_color);
+			border-collapse: collapse;
+		}
+		td {
+			position: relative;
+			color: var(--main_color);
+			background-color: var(--main_bg_color);
+			padding: 5px;
+			text-align: center;
+		}
+		@supports ( -moz-appearance:none ){
+			td {
+				background-clip: padding-box;
+			}
+		}
+		td:hover, td.selected:hover {
+			color: var(--sel_color);
+			background-color: var(--hover_bg_color);
+		}
+		td.selected {
+			color: var(--sel_color);
+			background-color: var(--sel_bg_color);
+		}
+		#centre {
+			background-color: var(--sel_bg_color);
+		}
+		/* reset button */
+		#reset {
+			color: var(--main_color);
+			background-color: var(--main_bg_color);
+			display: block;
+			line-height: 10px;
+			margin: 10px auto;
+			padding: 10px;
+			text-align: center;
+			width: 10vw;
+		}
+		#reset:hover {
+			color: var(--sel_color);
+			background-color: var(--sel_bg_color);
+		}
+		#credits {
+			font-size: 1.5vh;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1 id="title"></h1>
+	<table id="grid"><tbody><tr><td></td></tr></tbody></table>
+	<p id="reset">Effacer</p>
+	<!-- <p id="credits">Inspiré de la grille créée par @kholo et @thenolette.</p> -->
+</body>
+</html>
