@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<!-- Inspiré de la grille créée par @kholo et @thenolette disponible sur le site https://kholo.bit-ronin.net/twitch/bingo_camily.html 
+<!-- Inspiré de la grille créée par @kholo et @thenolette et disponible sur le site https://kholo.bit-ronin.net/twitch/bingo_camily.html
 Copyleft (ↄ) 2019 -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 <head>
 	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+	
 	<script type="application/javascript">
-	var row = 7;	// nombre de lignes
-	var col = 7;	// nombre de colones
+	//<![CDATA[
+	var row = 4;	// nombre de lignes 7
+	var col = 4;	// nombre de colones
 	var title = "Bingo Stream CPC";	//titre du bingo
 	var bingo = [
 	"Anecdote de N. Malware",
@@ -56,38 +58,43 @@ Copyleft (ↄ) 2019 -->
 	"Point CPCHardware : \"c'est la faute du matos\"",
 	"Mention d'un rédacteur parti trop tôt",
 	"Star Citadine : Polynette",
-	"Le train ?",
+	"Train",
 	"Subtilité, finesse et poésie"
-	];
-	//<![CDATA[
+	];	// sources et remerciements
+	var credits = "Rose du lapin de Couly.";	// sources et remerciements
+	// couleurs :
+	document.documentElement.style.setProperty('--main_color', '#F9C0C7');
+	document.documentElement.style.setProperty('--main_bg_color', '#555555');
+	document.documentElement.style.setProperty('--sel_color', '#FFFFFF');
+	document.documentElement.style.setProperty('--sel_bg_color', '#F9C0C7');
+	document.documentElement.style.setProperty('--hover_bg_color', '#FFC0C7');
 	function generate(){
 		// vars
-		var tr, td, i, j;
+		var table, tr, td, i, j;
 		var id_content=0;
 		// add title of the bingo
 		document.getElementById('title').textContent = title;
-		document.getElementsByTagName('title')[0].textContent = title;
+		// add credits
+		document.getElementById('credits').textContent += credits;
 		// generate bingo table
-		var table = document.getElementById('grid');
-		table.removeChild(table.firstChild)
+		table = document.getElementById('grid').getElementsByTagName('tbody')[0];
+		table.removeChild(table.firstChild);
 		for (i = 0; i < row; i++) {
-			tr = document.createElement('tr');
+			tr = table.insertRow();
 			for (j = 0; j < col; j++) {
-				td = document.createElement('td');
+				td = tr.insertCell();
 				td.textContent = bingo[id_content];	// add content
 				td.addEventListener('click', sw_bingo);
-				tr.appendChild(td)
-				id_content=id_content+1;
+				id_content++;
 			}
 			table.appendChild(tr);
 		}
+		square_cells(row, col);
 		// reset button
 		document.getElementById('reset').addEventListener('click', reset_b);
 	}
-	
-	//functions
 	function sw_bingo(evt) {
-		classList = evt.target.classList;
+		var classList = evt.target.classList;
 		if (classList.contains('selected')) {
 			classList.remove('selected'); 
 		} else {
@@ -99,22 +106,25 @@ Copyleft (ↄ) 2019 -->
 			td.classList.remove('selected');
 		}
 	}
-	
-
-	window.addEventListener ? 
-window.addEventListener("load",generate,false) : 
-window.attachEvent && window.attachEvent("onload",generate);
+	function square_cells(row, col) {
+		var root_style = document.documentElement.style;
+		root_style.setProperty("--cell_height", (100 / row) + "%");
+		root_style.setProperty("--cell_width", (100 / col) + "%");
+	}
+	window.addEventListener('DOMContentLoaded', generate);
 	//]]>
 	</script>
 	<title></title>
 	<style type="text/css">
 		/* vars */
 		:root {
-			--main_color: #FF007F;
-			--main_bg_color: #222222;
+			--main_color: red;
+			--main_bg_color: #000000;
 			--sel_color: #FFFFFF;
-			--sel_bg_color: #DF005F;
-			--hover_bg_color: #FF0090;
+			--sel_bg_color: #990000;
+			--hover_bg_color: #FF0000;
+			--cell_height: auto;
+			--cell_width: auto;
 		}
 		/* main */
 		body {
@@ -133,6 +143,7 @@ window.attachEvent && window.attachEvent("onload",generate);
 			margin: auto auto;
 			height: 80vh;
 			width: 80vh;
+			background: var(--sel_bg_color)
 		}
 		table, tr, td {
 			border: 2px solid var(--sel_bg_color);
@@ -142,8 +153,10 @@ window.attachEvent && window.attachEvent("onload",generate);
 			position: relative;
 			color: var(--main_color);
 			background-color: var(--main_bg_color);
-			padding: 5px;
 			text-align: center;
+			padding: 5px;
+			height: var(--cell_height);
+			width: var(--cell_width);
 		}
 		@supports ( -moz-appearance:none ){
 			td {
@@ -177,15 +190,16 @@ window.attachEvent && window.attachEvent("onload",generate);
 			background-color: var(--sel_bg_color);
 		}
 		#credits {
-			font-size: 1.5vh;
+			font-size: 0.8em;
 			text-align: center;
 		}
 	</style>
 </head>
 <body>
 	<h1 id="title"></h1>
+	<!-- placeholder table -->
 	<table id="grid"><tbody><tr><td></td></tr></tbody></table>
 	<p id="reset">Effacer</p>
-	<!-- <p id="credits">Inspiré de la grille créée par @kholo et @thenolette.</p> -->
+	<p id="credits">Inspiré de la grille créée par @kholo et @thenolette. </p>
 </body>
 </html>
