@@ -1,5 +1,5 @@
-	var row = 4;	// nombre de lignes 7
-	var col = 4;	// nombre de colones
+	var row = 7;	// nombre de lignes
+	var col = 7;	// nombre de colones
 	var title = "Bingo Stream CPC";	//titre du bingo
 	var bingo = [
 	"Anecdote de N. Malware",
