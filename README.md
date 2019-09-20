@@ -11,6 +11,9 @@ Pour les utilisateurs de Edge :
 ## CanardPC
 - [Grille CPC](http://htmlpreview.github.io/?https://raw.githubusercontent.com/Aerdalis/bingo/master/bingos/bingo_stream_CPC.html)
 
+Mirroir si github.io ne fonctionne pas :
+- [Grille CPC (mirroir)](http://aerdalis.free.fr/bingo_stream_CPC.html)
+
 Version hors ligne et pour les utilisateurs de Edge :
 - [Grille CPC (hors ligne)](https://raw.githubusercontent.com/Aerdalis/bingo/master/bingos/bingo_stream_CPC.html) (clic droit, enregistrer sous...)
 
