@@ -58,8 +58,8 @@ class MaJBingos(object):
 		
 		Parameters
 		----------
-		:param output_path: path to directory to write genrerated files
-		:type ou
+		
+		None
 		"""
 		# load main file
 		new_grid_code_f = self.main_file.open('r', encoding="utf-8")
@@ -108,6 +108,7 @@ class MaJBingos(object):
 		# generate all grids
 		for grid in self.corpus:
 			self.generate_grid(grid)
+		return
 		
 # main function (merge)
 if __name__ == "__main__":
