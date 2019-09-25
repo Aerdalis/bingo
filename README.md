@@ -5,6 +5,8 @@ Les différents grilles sont dans bingo. Pour jouer deux versions sont disponibl
 ## Boulet
 - [Grille de Boulet](http://htmlpreview.github.io/?https://raw.githubusercontent.com/Aerdalis/bingo/master/bingos/bingo_boulet_dessin.html)
 
+- [Grille de Boulet si la précédente ne fonctionne pas](http://aerdalis.free.fr/bingo_boulet_dessin.html)
+
 Pour les utilisateurs de Edge :
 - [Grille de Boulet (hors ligne)](https://raw.githubusercontent.com/Aerdalis/bingo/master/bingos/bingo_boulet_dessin.html) (clic droit, enregistrer sous...)
 
