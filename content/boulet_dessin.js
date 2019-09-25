@@ -2,7 +2,7 @@
 	var col = 7;	// nombre de colones
 	var title = "Bingo Boulet";	//titre du bingo
 	var bingo = [
-	"Quelqu'un demande son papier préféré",
+	"*Pouic pouic* de la tablette",
 	"Imprévu technique",
 	"Quelqu'un demande ses recommandations de bd/série/film",
 	"Boulet oublie de sauvegarder pendant 1h",
@@ -14,7 +14,7 @@
 	"Anecdote fabuleuse",
 	"Petite discussion scientifique",
 	"Creepy pasta",
-	"Le live dure (bien) plus longtemps que boulet l'avait dit",
+	"Le live dure (bien) plus longtemps que Boulet l'avait dit",
 	"\"Va comme j'te pousse\"",
 	"\"Je comprends pas ce que tu me dis\"",
 	"Téléphone grésille",
@@ -36,7 +36,6 @@
 	"\"Pas cher, parlez-en à vos amis\"",
 	"Tisane ou whisky",
 	"Teasing de ouf. \"Je ne peux encore rien dire\"",
-	"\"Y a coloc. Hey Coloc ! Je streame la\"",
 	"T-shirt mangez des nouilles",
 	"Voix sensuelle dans le micro",
 	"Point ASMR",
@@ -49,10 +48,14 @@
 	"Lac du Connemara",
 	"Dessin sur le bord de la feuille pout expliquer un truc",
 	"BouletBox : Boulet bruite à la bouche ce qu'il dessine",
-	"Une fenêtre Cookie Clicker sauvage apparait",
-	"\"J'ai reçu un message, attendez une minute\""
+	"Boulet dit un truc avec son stylet dans la bouche",
+	"\"J'ai reçu un message, attendez une minute\"",
+	"\"Je vais faire un truc de feignant\"",
+	"Quelqu'un demande son papier préféré",
+	"\"Y a coloc. Hey Coloc ! Je streame la\"",
+	"Une fenêtre Cookie Clicker sauvage apparait"
 	];	// contenu des cases de la grille
-	var credits = "Avec les contributions du chat twitch, dont KrysaliaH, bidord, fabbouz, hemostick, majorgrubert, MarieOrtie, meumeum, Philem, ramathi, sarcellecannelle, sophie3869, treguy, youpipouet et quelques oubliés.";	// sources et remerciements
+	var credits = "Avec les contributions du chat twitch, dont KrysaliaH, bidord, fabbouz, hemostick, majorgrubert, MarieOrtie, meumeum, Philem, ramathi, sarcellecannelle, sophie3869, treguy, youpipouet, Vader666th, claire_ette906 et quelques oubliés.";	// sources et remerciements
 	// couleurs :
 	document.documentElement.style.setProperty('--main_color', '#D8761B');
 	document.documentElement.style.setProperty('--main_bg_color', '#FFFFFF');
