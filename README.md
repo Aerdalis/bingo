@@ -39,4 +39,4 @@ Ou
 N'hésitez pas à forker/envoyer des commentaires/envoyer des modifications.
 
 # License
-Copyleft (ↄ) 2019
+Copyleft 🄯 2019+
